@@ -13,8 +13,12 @@ export const createUser = (credentials) => {
 }
 
 export const fetchUser = (...args) => {
+    let headers = new Headers({
+        'Access-Control-Allow-Origin': '*'
+    });
     const request = fetch(`${API_URL}/login`, {
         method: 'POST',
+        headers,
         mode: 'cors'
     }).then(response => {
         let user = response;
