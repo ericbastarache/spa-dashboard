@@ -1,4 +1,4 @@
-import { USER_LOGIN, USER_REGISTER } from '../actions';
+import { USER_LOGIN, USER_REGISTER } from '../actions/types';
 
 const INITIAL_STATE = {
     user: null,

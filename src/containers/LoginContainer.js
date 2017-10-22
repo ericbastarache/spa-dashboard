@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchUser } from '../actions';
 class LoginContainer extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,9 @@ class LoginContainer extends Component {
     }
 
     handleSubmit = (e) => {
-        
+        console.log(this, e);
+        this.props.dispatch(fetchUser(this.state.username, this.state.password));
+        // e.preventDefault();
         //send data to server and store user in state
     }
 
@@ -37,5 +40,14 @@ const mapStateToProps = (state) => {
         password: state.password
     };
 };
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmit: () => {
+            dispatch(fetchUser(this.state.username, this.state.password))
+        }
+    }
+}
+
 
 export default connect(mapStateToProps)(LoginContainer);
