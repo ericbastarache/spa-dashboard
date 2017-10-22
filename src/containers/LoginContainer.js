@@ -17,7 +17,6 @@ class LoginContainer extends Component {
     }
 
     handleSubmit = (e) => {
-        console.log(this, e);
         this.props.dispatch(fetchUser(this.state.username, this.state.password));
         // e.preventDefault();
         //send data to server and store user in state
