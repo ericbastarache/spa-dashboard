@@ -24,13 +24,17 @@ export const fetchUser = (...args) => {
     const request = fetch(`${API_URL}/login`, {
         method: 'POST',
         headers,
-        mode: 'cors'
+        body: {
+            "username" : args[0],
+            "password" : args[1]
+        },
+        mode: 'no-cors'
     }).then(response => {
-        let user = response;
+        let user = response.user;
         return user;
     });
     return {
         type: USER_LOGIN,
-        payload: request
+        payload: request.user
     }
 }
