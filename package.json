@@ -1,5 +1,5 @@
 {
-  "proxy": "localhost:3001",
+  "proxy": "http://localhost:3001",
   "name": "spa-dashboard",
   "version": "0.1.0",
   "private": true,

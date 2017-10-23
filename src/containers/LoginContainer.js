@@ -34,20 +34,4 @@ class LoginContainer extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        username: state.username,
-        password: state.password
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onSubmit: () => {
-            dispatch(fetchUser(this.state.username, this.state.password))
-        }
-    }
-}
-
-
-export default connect(mapStateToProps)(LoginContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
