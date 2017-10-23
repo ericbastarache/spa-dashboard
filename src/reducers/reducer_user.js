@@ -10,12 +10,12 @@ export default (state = INITIAL_STATE, action) => {
         case USER_LOGIN:
             return {
                 ...state,
-                user: action.payload.user
+                user: action.payload
             }
         case USER_REGISTER: 
             return {
                 ...state,
-                newUser: action.payload.user
+                newUser: action.payload
             }
         default:
             return state
